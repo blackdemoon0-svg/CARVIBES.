@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+:root {
+  --cv-black: #06070a;
+  --cv-charcoal: #0d0f14;
+  --cv-charcoal-2: #14161d;
+  --cv-white: #f5f6fa;
+  --cv-red: #ff2d3d;
+  --cv-red-dim: #b3121f;
+  --cv-blue: #2fd0ff;
+  --cv-gold: #d4af6a;
+}
+
+@theme inline {
+  --color-cv-black: var(--cv-black);
+  --color-cv-charcoal: var(--cv-charcoal);
+  --color-cv-charcoal-2: var(--cv-charcoal-2);
+  --color-cv-white: var(--cv-white);
+  --color-cv-red: var(--cv-red);
+  --color-cv-red-dim: var(--cv-red-dim);
+  --color-cv-blue: var(--cv-blue);
+  --color-cv-gold: var(--cv-gold);
+  --font-display: var(--font-orbitron);
+  --font-body: var(--font-rajdhani);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background: var(--cv-black);
+  color: var(--cv-white);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--cv-red);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cv-black);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--cv-red), var(--cv-blue));
+  border-radius: 8px;
+}
+
+.font-display {
+  font-family: var(--font-orbitron), sans-serif;
+}
+
+/* ============ Backgrounds ============ */
+.cv-bg-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.cv-hero-glow {
+  background:
+    radial-gradient(60% 50% at 15% 10%, rgba(255, 45, 61, 0.25), transparent 60%),
+    radial-gradient(50% 45% at 85% 15%, rgba(47, 208, 255, 0.22), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(212, 175, 106, 0.12), transparent 60%),
+    #06070a;
+}
+
+/* ============ Glassmorphism ============ */
+.cv-glass {
+  background: rgba(20, 22, 29, 0.55);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cv-glass-strong {
+  background: rgba(13, 15, 20, 0.78);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ============ Cards ============ */
+.cv-card {
+  position: relative;
+  border-radius: 1.25rem;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.cv-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 30px 60px -20px rgba(255, 45, 61, 0.25), 0 20px 40px -20px rgba(47, 208, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.cv-card-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* ============ Buttons ============ */
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.cv-btn-primary {
+  background: linear-gradient(135deg, var(--cv-red), #ff5a68);
+  color: white;
+  box-shadow: 0 10px 30px -8px rgba(255, 45, 61, 0.6);
+}
+.cv-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px -8px rgba(255, 45, 61, 0.8);
+}
+
+.cv-btn-electric {
+  background: linear-gradient(135deg, var(--cv-blue), #6be2ff);
+  color: #06070a;
+  box-shadow: 0 10px 30px -8px rgba(47, 208, 255, 0.55);
+}
+.cv-btn-electric:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px -8px rgba(47, 208, 255, 0.75);
+}
+
+.cv-btn-ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cv-white);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+.cv-btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cv-btn-gold {
+  background: linear-gradient(135deg, var(--cv-gold), #f0d9a8);
+  color: #06070a;
+  box-shadow: 0 10px 30px -8px rgba(212, 175, 106, 0.55);
+}
+.cv-btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px -8px rgba(212, 175, 106, 0.8);
+}
+
+/* ============ Text gradients ============ */
+.cv-text-gradient {
+  background: linear-gradient(90deg, var(--cv-red), var(--cv-gold) 50%, var(--cv-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cv-text-red-blue {
+  background: linear-gradient(90deg, var(--cv-red), var(--cv-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============ Animations ============ */
+@keyframes cv-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+.cv-float {
+  animation: cv-float 6s ease-in-out infinite;
+}
+
+@keyframes cv-pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.cv-pulse-glow {
+  animation: cv-pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes cv-spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.cv-spin-slow {
+  animation: cv-spin-slow 18s linear infinite;
+}
+
+@keyframes cv-fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.cv-fade-up {
+  animation: cv-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cv-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.cv-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background-size: 200% 100%;
+  animation: cv-shimmer 2.5s linear infinite;
+}
+
+@keyframes cv-grow-bar {
+  from { width: 0%; }
+}
+.cv-grow-bar {
+  animation: cv-grow-bar 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes cv-dash {
+  from { stroke-dashoffset: var(--cv-dash-start); }
+  to { stroke-dashoffset: var(--cv-dash-end); }
+}
+.cv-ring-circle {
+  animation: cv-dash 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cv-scrollbar-hide::-webkit-scrollbar { display: none; }
+.cv-scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+.cv-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.cv-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* ============ Native form control safety net ============
+   Prevents any remaining native <select>/<option>/<input> from ever
+   rendering as an unstyled white panel regardless of OS/browser theme. */
+select,
+input,
+textarea {
+  color-scheme: dark;
+  background-color: #0d0f14;
+  color: #f5f6fa;
+}
+
+select option {
+  background-color: #0d0f14;
+  color: #f5f6fa;
+}
+
+select:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* ============ Custom dropdown / combobox panels ============ */
+.cv-dropdown-panel {
+  background: #0b0c11;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
