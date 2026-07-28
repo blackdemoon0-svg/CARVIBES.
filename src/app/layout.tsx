@@ -22,10 +22,25 @@ export const metadata: Metadata = {
   title: "CarVibes — Find the car that fits your vibe.",
   description:
     "CarVibes is a premium, futuristic automotive universe: discover 130+ cars, explore brands, compare vehicles, find your perfect car, and read automotive news and rankings.",
-  keywords: ["cars", "CarVibes", "Audi", "BMW", "Mercedes-Benz", "compare cars", "automotive news"],
+  keywords: [
+    "cars",
+    "CarVibes",
+    "Audi",
+    "BMW",
+    "Mercedes-Benz",
+    "compare cars",
+    "automotive news",
+  ],
+  verification: {
+    google: "Q9IY-30MOLsIMVPW3h8IKngR6DfnOZYC8vP09WKBwcY",
+  },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
   return (
     <html lang="en" className={`${orbitron.variable} ${rajdhani.variable}`}>
       <body className="cv-noise bg-cv-black text-cv-white antialiased">
