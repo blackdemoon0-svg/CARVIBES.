@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { Orbitron, Rajdhani } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { AppStateProvider } from "@/context/AppStateContext";
 import Navbar from "@/components/Navbar";
@@ -50,8 +49,6 @@ export default function RootLayout({
           <main className="min-h-screen">{children}</main>
           <Footer />
         </AppStateProvider>
-
-        <Analytics />
       </body>
     </html>
   );
