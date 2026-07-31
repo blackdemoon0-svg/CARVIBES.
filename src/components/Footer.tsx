@@ -15,7 +15,7 @@ export default function Footer() {
     <footer className="relative mt-24 border-t border-white/10 bg-cv-charcoal">
       <div className="cv-bg-grid absolute inset-0 opacity-30" />
       <div className="relative mx-auto max-w-7xl px-5 py-16">
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-5">
           <div>
             <div className="flex items-center gap-2">
               <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-cv-red via-cv-gold to-cv-blue font-display text-sm font-800 text-cv-black">
@@ -25,7 +25,9 @@ export default function Footer() {
                 Car<span className="cv-text-red-blue">Vibes</span>
               </span>
             </div>
-            <p className="mt-4 text-sm text-white/60">Discover. Compare. Find your vibe.</p>
+            <p className="mt-4 text-sm text-white/60">
+              Discover. Compare. Find your vibe.
+            </p>
             <p className="mt-2 text-xs uppercase tracking-[0.2em] text-white/30">
               Find the car that fits your vibe.
             </p>
@@ -38,7 +40,10 @@ export default function Footer() {
             <ul className="mt-4 space-y-2.5">
               {nav.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-white/70 transition hover:text-cv-blue">
+                  <Link
+                    href={l.href}
+                    className="text-sm text-white/70 transition hover:text-cv-blue"
+                  >
                     {l.label}
                   </Link>
                 </li>
@@ -52,23 +57,67 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-2.5">
               <li>
-                <Link href="/brands/audi" className="text-sm text-white/70 transition hover:text-cv-red">
+                <Link
+                  href="/brands/audi"
+                  className="text-sm text-white/70 transition hover:text-cv-red"
+                >
                   Audi
                 </Link>
               </li>
               <li>
-                <Link href="/brands/bmw" className="text-sm text-white/70 transition hover:text-cv-blue">
+                <Link
+                  href="/brands/bmw"
+                  className="text-sm text-white/70 transition hover:text-cv-blue"
+                >
                   BMW
                 </Link>
               </li>
               <li>
-                <Link href="/brands/mercedes-benz" className="text-sm text-white/70 transition hover:text-cv-gold">
+                <Link
+                  href="/brands/mercedes-benz"
+                  className="text-sm text-white/70 transition hover:text-cv-gold"
+                >
                   Mercedes-Benz
                 </Link>
               </li>
               <li>
-                <Link href="/compare" className="text-sm text-white/70 transition hover:text-white">
+                <Link
+                  href="/compare"
+                  className="text-sm text-white/70 transition hover:text-white"
+                >
                   Audi vs BMW vs Mercedes
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display text-xs font-700 uppercase tracking-[0.2em] text-white/50">
+              Legal
+            </h4>
+            <ul className="mt-4 space-y-2.5">
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-white/70 transition hover:text-cv-blue"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-sm text-white/70 transition hover:text-cv-blue"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-sm text-white/70 transition hover:text-cv-blue"
+                >
+                  Terms of Service
                 </Link>
               </li>
             </ul>
@@ -112,3 +161,4 @@ export default function Footer() {
     </footer>
   );
 }
+ 
